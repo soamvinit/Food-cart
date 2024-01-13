@@ -1,6 +1,6 @@
 import { LOGO_URL } from "./utils/constants";
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 const Title = () => (
     <a href="/">
       <img className="logo" src={LOGO_URL}  />
@@ -14,9 +14,15 @@ const Header = () => {
           <Title />
         <div className="nav-items">
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li>
+            <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+            <Link to="/contact">Contact</Link>
+            </li>
             <li>Cart<i class="fa-solid fa-cart-shopping"></i></li>
             <button className="login-btn" onClick={()=>{
             btnNameReact==="Login"? setBtnNameReact("Logout") : setBtnNameReact("Login");
